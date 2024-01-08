@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { type CSSProperties, computed } from "vue";
 import { hasAuth, getAuths } from "@/router/utils";
+import { useRenderIcon } from "@/components/ReIcon/src/hooks";
+import Test from "@iconify-icons/ep/delete";
 
 defineOptions({
   name: "PermissionButton"
@@ -19,6 +21,8 @@ const elStyle = computed((): CSSProperties => {
     <el-tag :style="elStyle" size="large" effect="dark">
       当前拥有的code列表：{{ getAuths() }}
     </el-tag>
+
+    <el-button type="primary" :icon="useRenderIcon(Test)"> test </el-button>
 
     <el-card shadow="never" :style="elStyle">
       <template #header>

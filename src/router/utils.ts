@@ -344,6 +344,7 @@ function getHistoryMode(routerHistory): RouterHistory {
 
 /** 获取当前页面按钮级别的权限 */
 function getAuths(): Array<string> {
+  console.log("getAuths", router.currentRoute.value);
   return router.currentRoute.value.meta.auths as Array<string>;
 }
 
